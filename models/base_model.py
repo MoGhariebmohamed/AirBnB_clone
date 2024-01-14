@@ -3,7 +3,6 @@ import json
 import uuid
 from datetime import datetime
 """ class base model for the project """
-""" for base class"""
 
 
 class BaseModel:
@@ -32,5 +31,5 @@ class BaseModel:
 
     def __str__(self):
         """to print the instance as a string representation"""
-        return "[{}] ({}) ({})".format(self.__class__.__name__,
+        return "[{}] ({}) {}".format(self.__class__.__name__,
                                        self.id, self.__dict__)
