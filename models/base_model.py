@@ -15,6 +15,7 @@ class BaseModel:
             args: not be used
             kwargs: each key of this dictionary is an attribute name
         """
+<<<<<<< HEAD
         if kwargs:
             for key, value in kwargs.items():
                 if key == "__class__":
@@ -23,10 +24,28 @@ class BaseModel:
                     value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
                 if key != "__class__":
                     setattr(self, key, value)
+=======
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.utcnow()
+        self.updated_at = datetime.utcnow()
+        
+    def __init__(self, *args, **kwargs):
+        if kwargs:
+            for key, value in kwargs.items():
+                if key != '__class__':
+                    if key in ['created_at', 'updated_at']:
+                        setattr(self, key, datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f'))
+                    else:
+                        setattr(self, key, value)
+>>>>>>> 807a701dce40fa8911842f081d92217095d75f42
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.utcnow()
             self.updated_at = datetime.utcnow()
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 807a701dce40fa8911842f081d92217095d75f42
 
     def save(self):
         """updates the public instance attribute"""
