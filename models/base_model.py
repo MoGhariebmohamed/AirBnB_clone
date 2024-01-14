@@ -33,4 +33,4 @@ class BaseModel:
     def __str__(self):
         """to print the instance as a string representation"""
         return "[{}] ({}) {}".format(self.__class__.__name__,
-                                       self.id, self.__dict__)
+                                     self.id, self.__dict__)

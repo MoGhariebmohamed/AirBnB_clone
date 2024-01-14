@@ -33,12 +33,16 @@ class Test_Base_Model(unittest.TestCase):
 
     def test_to_dict(self):
         """to test dictionary method output."""
-        Test_My_Model = self.testModel.to_dict()
+
+        Test_MyModel = self.testModel.to_dict()
+
         self.assertIsInstance(Test_My_Model, dict)
         self.assertEqual(Test_My_Model["__class__"], 'BaseModel')
         self.assertEqual(Test_My_Model['id'], self.testModel.id)
-        self.assertEqual(Test_My_Model['created_at'], self.testModel.created_at.isoformat())
-        self.assertEqual(Test_My_Model["updated_at"], self.testModel.updated_at.isoformat())
+        self.assertEqual(Test_My_Model['created_at'],
+                         self.testModel.created_at.isoformat())
+        self.assertEqual(Test_My_Model["updated_at"],
+                         self.testModel.updated_at.isoformat())
 
     def test_str(self):
         """to test print format method representation."""
