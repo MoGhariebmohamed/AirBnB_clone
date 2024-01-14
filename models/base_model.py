@@ -31,10 +31,12 @@ class BaseModel:
             self.updated_at = datetime.utcnow()
 
         models.storage.new(self)
+
     def save(self):
         """updates the public instance attribute"""
         self.updated_at = datetime.utcnow()
         models.storage.save()
+
     def to_dict(self):
         """returns a dictionary containing all keys/values"""
         dictionary = self.__dict__.copy()

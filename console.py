@@ -13,12 +13,12 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def default(self, line):
-        """Called on an input line when the command prefix is not recognized."""
+        """Called on an input line when command prefix is not recognized."""
         if line == '':
             return
         else:
             print(f"*** Unknown syntax: {line}")
 
-    
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
