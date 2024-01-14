@@ -24,6 +24,11 @@ class Test_Base_Model(unittest.TestCase):
         self.assertIsNotNone(self.testModel.id)
         self.assertIsNotNone(self.testModel.created_at)
         self.assertIsNotNone(self.testModel.updated_at)
+    def test_save(self):
+        """to test save method output."""
+        vlaue_updated_at = self.testModel.updated_at
+        value_now_updated_at = self.testModel.save()
+        self.assertNotEqual(vlaue_updated_at, value_now_updated_at)
 
 
 if __name__ == "__main__":
