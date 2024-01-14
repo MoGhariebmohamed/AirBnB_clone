@@ -34,7 +34,7 @@ class Test_Base_Model(unittest.TestCase):
     def test_to_dict(self):
         """to test dictionary method output."""
 
-        Test_My_Model = self.testModel.to_dict()
+        Test_MyModel = self.testModel.to_dict()
 
         self.assertIsInstance(Test_My_Model, dict)
         self.assertEqual(Test_My_Model["__class__"], 'BaseModel')
