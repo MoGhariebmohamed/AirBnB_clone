@@ -2,6 +2,7 @@
 import json
 import uuid
 from datetime import datetime
+import models
 """ class base model for the project """
 
 
@@ -15,13 +16,13 @@ class BaseModel:
             args: not be used
             kwargs: each key of this dictionary is an attribute name
         """
-        time_formate = '%Y-%m-%dT%H:%M:%S.%f'
+        date_time = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
                     if key in ['created_at', 'updated_at']:
                         setattr(self, key, datetime.strptime(value,
-                                                             time_formate))
+                                                             datetime))
                     else:
                         setattr(self, key, value)
         else:
@@ -29,10 +30,11 @@ class BaseModel:
             self.created_at = datetime.utcnow()
             self.updated_at = datetime.utcnow()
 
+        models.storage.new(self)
     def save(self):
         """updates the public instance attribute"""
         self.updated_at = datetime.utcnow()
-
+        models.storage.save()
     def to_dict(self):
         """returns a dictionary containing all keys/values"""
         dictionary = self.__dict__.copy()
