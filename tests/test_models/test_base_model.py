@@ -36,12 +36,12 @@ class Test_Base_Model(unittest.TestCase):
 
         Test_MyModel = self.testModel.to_dict()
 
-        self.assertIsInstance(Test_My_Model, dict)
-        self.assertEqual(Test_My_Model["__class__"], 'BaseModel')
-        self.assertEqual(Test_My_Model['id'], self.testModel.id)
-        self.assertEqual(Test_My_Model['created_at'],
+        self.assertIsInstance(Test_MyModel, dict)
+        self.assertEqual(Test_MyModel["__class__"], 'BaseModel')
+        self.assertEqual(Test_MyModel['id'], self.testModel.id)
+        self.assertEqual(Test_MyModel['created_at'],
                          self.testModel.created_at.isoformat())
-        self.assertEqual(Test_My_Model["updated_at"],
+        self.assertEqual(Test_MyModel["updated_at"],
                          self.testModel.updated_at.isoformat())
 
     def test_str(self):
