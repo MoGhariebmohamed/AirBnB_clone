@@ -78,6 +78,17 @@ class Test_eachMethod(unittest.TestCase):
         with self.assertRaises(TypeError):
             models.storage.save(None)
 
+    def test_reload(self):
+        """"Test the reload metod"""
+        models.storage.new(self.test_basemodel)
+        models.storage.save()
+        models.storage.reload()
+        objs = FileStorage._FileStorage__objects
+        self.assertIn("BaseModel." + self.test_basemodel.id, objs)
+        with self.assertRaises(TypeError):
+            models.storage.reload(None)
+
+
 
 if __name__ == "__main__":
     unittest.main()
