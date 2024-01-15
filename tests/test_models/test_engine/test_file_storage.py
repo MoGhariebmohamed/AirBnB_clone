@@ -28,6 +28,7 @@ class Test_filestorage_exist(unittest.TestCase):
     def teststorage_filestrg(self):
         self.assertEqual(type(models.storage), FileStorage)
 
+
 class Test_eachMethod(unittest.TestCase):
     """This class for unittest of methods for filestorage class."""
 
@@ -61,7 +62,8 @@ class Test_eachMethod(unittest.TestCase):
     def test_new(self):
         """Test the new objects method"""
         models.storage.new(self.test_basemodel)
-        self.assertIn("BaseModel." + self.test_basemodel.id, models.storage.all().keys())
+        self.assertIn("BaseModel." + self.test_basemodel.id,
+                      models.storage.all().keys())
         self.assertIn(self.test_basemodel, models.storage.all().values())
         with self.assertRaises(TypeError):
             models.storage.new(BaseModel(), 1)
@@ -87,7 +89,6 @@ class Test_eachMethod(unittest.TestCase):
         self.assertIn("BaseModel." + self.test_basemodel.id, objs)
         with self.assertRaises(TypeError):
             models.storage.reload(None)
-
 
 
 if __name__ == "__main__":
