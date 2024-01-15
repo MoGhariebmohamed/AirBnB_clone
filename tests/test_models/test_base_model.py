@@ -13,11 +13,23 @@ class Test_Base_Model(unittest.TestCase):
     def setUpClass(cls):
         """Runs this setup before each test."""
         cls.testModel = BaseModel()
+        try:
+            os.rename("file.json", "new.json")
+        except FileNotFoundError:
+            pass
 
     @classmethod
     def tearDownClass(cls):
         """Teardown the basemodel."""
         del cls.testModel
+        try:
+            os.remove("file.json")
+        except FileNotFoundError:
+            pass
+        try:
+            os.rename("new.json", "exist.json")
+        except FileNotFoundError:
+            pass
 
     def test_init(self):
         """Test the init function"""
