@@ -39,7 +39,6 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r', encoding="utf-8") as file:
                 try:
                     data = json.load(file)
-
                     for key, obj_data in data.items():
                         class_name, obj_id = key.split('.')
                         class_ = eval(class_name)
