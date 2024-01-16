@@ -8,7 +8,6 @@ from models.review import Review
 from models.state import State
 from models.city import City
 
-
 class FileStorage:
     """
     Serializes instances to a JSON file and deserializes JSON file to instances
