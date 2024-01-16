@@ -5,7 +5,6 @@ from datetime import datetime
 import models
 """ class base model for the project """
 
-
 class BaseModel:
     """defines all common attributes/methods for other classes"""
 
