@@ -6,7 +6,6 @@ import unittest
 from datetime import datetime
 from models.user import User
 
-
 class Testuser(unittest.TestCase):
     """class for testing existance of user class"""
     def test_typeUser(self):
