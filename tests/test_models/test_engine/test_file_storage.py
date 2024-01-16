@@ -9,7 +9,6 @@ from models.base_model import BaseModel
 from datetime import datetime
 import sys
 
-
 class Test_filestorage_exist(unittest.TestCase):
     """This class for existance of file sorage."""
     def test_FileStorage_args(self):
