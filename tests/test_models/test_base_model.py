@@ -5,7 +5,6 @@ from models.base_model import BaseModel
 from datetime import datetime
 import sys
 
-
 class Test_Base_Model(unittest.TestCase):
     """This class for unittest."""
 
