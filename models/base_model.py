@@ -5,7 +5,6 @@ from datetime import datetime
 import models
 """ class base model for the project """
 
-
 class BaseModel:
     """defines all common attributes/methods for other classes"""
 
@@ -16,6 +15,7 @@ class BaseModel:
             args: not be used
             kwargs: each key of this dictionary is an attribute name
         """
+
         date_time = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for key, value in kwargs.items():

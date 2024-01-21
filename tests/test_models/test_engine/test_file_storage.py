@@ -9,7 +9,6 @@ from models.base_model import BaseModel
 from datetime import datetime
 import sys
 
-
 class Test_filestorage_exist(unittest.TestCase):
     """This class for existance of file sorage."""
     def test_FileStorage_args(self):
@@ -89,6 +88,7 @@ class Test_eachMethod(unittest.TestCase):
         self.assertIn("BaseModel." + self.test_basemodel.id, objs)
         with self.assertRaises(TypeError):
             models.storage.reload(None)
+
 
 
 if __name__ == "__main__":

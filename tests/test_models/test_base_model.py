@@ -5,7 +5,6 @@ from models.base_model import BaseModel
 from datetime import datetime
 import sys
 
-
 class Test_Base_Model(unittest.TestCase):
     """This class for unittest."""
 
@@ -59,6 +58,7 @@ class Test_Base_Model(unittest.TestCase):
         self.assertTrue(str(self.testModel).startswith('[BaseModel]'))
         self.assertIn(self.testModel.id, str(self.testModel))
         self.assertIn(str(self.testModel.__dict__), str(self.testModel))
+
 
 
 if __name__ == "__main__":
