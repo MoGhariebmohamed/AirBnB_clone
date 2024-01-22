@@ -1,4 +1,7 @@
-.containe .filters{
+button:hover {
+    opacity: 0.9;
+}
+.containe .filiters{
 	color: white;
 	height: 70px;
 	width: 100%;
@@ -17,7 +20,6 @@ button{
     top: 15%;
     right: 30px;
 }
-button {
-button:hover 
+button:hover { 
     opacity: 0.9;
 }
