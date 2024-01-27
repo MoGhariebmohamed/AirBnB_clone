@@ -1,0 +1,13 @@
+.locations {
+	height: 100%;
+	width: 25%;
+	border-right: #DDDDDD 1px;
+	display: inline-black;
+	position: relative;
+}
+.locations h3 {
+	font-weight: 600;
+	margin-bottom: 0;
+	margin-left: 15%;
+
+}
