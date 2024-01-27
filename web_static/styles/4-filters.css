@@ -1,10 +1,13 @@
 .filters{
-	background-color: white;
-	height: 70px;
-	width: 100%;
-	position: relative;
-	border: 1px #DDDDDD solid;
-	border-radius: 4px;
+        background-color: white;
+        height: 70px;
+        width: 100%;
+	    position: relative;
+        border: 1px #DDDDDD solid;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 4px;
 }
 .filters button{
     position: absolute;
@@ -18,6 +21,6 @@
     top: 15%;
     right: 30px;
 }
-button:hover { 
+button:hover {
     opacity: 0.9;
 }
